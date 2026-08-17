@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      target_date:
+        description: "수동 테스트 날짜 (YYYY-MM-DD)"
+        required: true
+        default: "2026-08-29"
+        type: string
 
 permissions:
   contents: write
@@ -34,7 +40,7 @@ jobs:
       - name: Check CGV and notify
         env:
           THEATER: ${{ vars.CGV_THEATER || '광교' }}
-          DATE: ${{ vars.CGV_DATE || '2026-08-29' }}
+          DATE: ${{ inputs.target_date || vars.CGV_DATE || '2026-08-29' }}
           MOVIE_KEYWORD: ${{ vars.CGV_MOVIE_KEYWORD || '오디세이' }}
           SCREEN_TYPE: ${{ vars.CGV_SCREEN_TYPE || 'IMAX' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

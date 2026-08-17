@@ -1,1 +1,103 @@
-{}
+{
+  "0257|2026-08-25|오디세이|imax": {
+    "date": "2026-08-25",
+    "last_notification_at": "2026-08-17T16:45:29.750231+00:00",
+    "last_notified_showtimes": [
+      {
+        "auditorium": "IMAX관",
+        "bookable": true,
+        "date": "20260825",
+        "end_time": "12:02",
+        "free_seats": 38,
+        "movie_name": "오디세이",
+        "movie_no": "30001323",
+        "product_no": "20054745",
+        "screen_label": "IMAX LASER 2D",
+        "screen_no": "006",
+        "sequence": "1",
+        "session_id": "20260825:0257:006:1:20054745",
+        "start_time": "09:00",
+        "theater_name": "CGV 광교",
+        "total_seats": 282
+      },
+      {
+        "auditorium": "IMAX관",
+        "bookable": true,
+        "date": "20260825",
+        "end_time": "15:27",
+        "free_seats": 31,
+        "movie_name": "오디세이",
+        "movie_no": "30001323",
+        "product_no": "20054745",
+        "screen_label": "IMAX LASER 2D",
+        "screen_no": "006",
+        "sequence": "2",
+        "session_id": "20260825:0257:006:2:20054745",
+        "start_time": "12:25",
+        "theater_name": "CGV 광교",
+        "total_seats": 282
+      },
+      {
+        "auditorium": "IMAX관",
+        "bookable": true,
+        "date": "20260825",
+        "end_time": "18:52",
+        "free_seats": 35,
+        "movie_name": "오디세이",
+        "movie_no": "30001323",
+        "product_no": "20054745",
+        "screen_label": "IMAX LASER 2D",
+        "screen_no": "006",
+        "sequence": "3",
+        "session_id": "20260825:0257:006:3:20054745",
+        "start_time": "15:50",
+        "theater_name": "CGV 광교",
+        "total_seats": 282
+      },
+      {
+        "auditorium": "IMAX관",
+        "bookable": true,
+        "date": "20260825",
+        "end_time": "22:17",
+        "free_seats": 25,
+        "movie_name": "오디세이",
+        "movie_no": "30001323",
+        "product_no": "20054745",
+        "screen_label": "IMAX LASER 2D",
+        "screen_no": "006",
+        "sequence": "4",
+        "session_id": "20260825:0257:006:4:20054745",
+        "start_time": "19:15",
+        "theater_name": "CGV 광교",
+        "total_seats": 282
+      },
+      {
+        "auditorium": "IMAX관",
+        "bookable": true,
+        "date": "20260825",
+        "end_time": "25:42",
+        "free_seats": 44,
+        "movie_name": "오디세이",
+        "movie_no": "30001323",
+        "product_no": "20054745",
+        "screen_label": "IMAX LASER 2D",
+        "screen_no": "006",
+        "sequence": "5",
+        "session_id": "20260825:0257:006:5:20054745",
+        "start_time": "22:40",
+        "theater_name": "CGV 광교",
+        "total_seats": 282
+      }
+    ],
+    "movie_keyword": "오디세이",
+    "notified_session_ids": [
+      "20260825:0257:006:1:20054745",
+      "20260825:0257:006:2:20054745",
+      "20260825:0257:006:3:20054745",
+      "20260825:0257:006:4:20054745",
+      "20260825:0257:006:5:20054745"
+    ],
+    "screen_type": "IMAX",
+    "theater": "광교"
+  }
+}

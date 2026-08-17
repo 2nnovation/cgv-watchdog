@@ -1,0 +1,57 @@
+name: CGV IMAX watch
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cgv-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Check CGV and notify
+        env:
+          THEATER: ${{ vars.CGV_THEATER || '광교' }}
+          DATE: ${{ vars.CGV_DATE || '2026-08-29' }}
+          MOVIE_KEYWORD: ${{ vars.CGV_MOVIE_KEYWORD || '오디세이' }}
+          SCREEN_TYPE: ${{ vars.CGV_SCREEN_TYPE || 'IMAX' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          STATE_PATH: state.json
+          HEADLESS: "true"
+          PYTHONUTF8: "1"
+        run: python cgv_watch.py
+
+      - name: Persist notification state
+        if: success()
+        run: |
+          if git diff --quiet -- state.json; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git commit -m "chore: update CGV notification state"
+          git push
